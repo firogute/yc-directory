@@ -5,7 +5,7 @@ export default function layout({
   children,
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <main className="font-work-sans">
+    <main className="">
       <NavBar />
       {children}
     </main>
