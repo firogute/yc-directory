@@ -1,26 +1,102 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-primary-100: #ffe8f0;
+  --color-primary: #ee2b69;
+  --color-secondary: #fbe843;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-black-100: #333333;
+  --color-black-200: #141413;
+  --color-black-300: #7d8087;
+  --color-black: #000000;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-white-100: #f7f7f7;
+  --color-white: #ffffff;
+
+  /* Font */
+  --font-work-sans: "Work Sans", sans-serif;
+
+  /* Radius */
+  --radius: 8px;
+
+  /* Shadows */
+  --shadow-100: 2px 2px 0px 0px rgb(0, 0, 0);
+  --shadow-200: 2px 2px 0px 2px rgb(0, 0, 0);
+  --shadow-300: 2px 2px 0px 2px rgb(238, 43, 105);
+
+  --breakpoint-xs: 475px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-work-sans);
+}
+
+@layer utilities {
+  /* Shadows */
+  .shadow-100 {
+    box-shadow: var(--shadow-100);
+  }
+  .shadow-200 {
+    box-shadow: var(--shadow-200);
+  }
+  .shadow-300 {
+    box-shadow: var(--shadow-300);
+  }
+
+  /* Border Radius */
+  .rounded-lg {
+    border-radius: var(--radius);
+  }
+  .rounded-md {
+    border-radius: calc(var(--radius) - 2px);
+  }
+  .rounded-sm {
+    border-radius: calc(var(--radius) - 4px);
+  }
+
+  /* Colors */
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-primary-100 {
+    color: var(--color-primary-100);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .text-black-100 {
+    color: var(--color-black-100);
+  }
+  .text-black-200 {
+    color: var(--color-black-200);
+  }
+  .text-black-300 {
+    color: var(--color-black-300);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-primary-100 {
+    background-color: var(--color-primary-100);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-black-100 {
+    background-color: var(--color-black-100);
+  }
+
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white-100 {
+    background-color: var(--color-white-100);
+  }
 }
