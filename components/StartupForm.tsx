@@ -17,6 +17,7 @@ const StartupForm = () => {
   const [pitch, setPitch] = useState("**Hello world!!!**");
   const { toast } = useToast();
   const router = useRouter();
+
   const handleFormSubmit = async (prevState: any, formData: FormData) => {
     try {
       const formValues = {
@@ -26,6 +27,7 @@ const StartupForm = () => {
         link: formData.get("link") as string,
         pitch,
       };
+
       await formSchema.parseAsync(formValues);
       console.log(formValues);
 
