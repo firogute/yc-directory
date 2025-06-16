@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { auth, signIn, signOut } from "@/auth";
 import { BadgePlus, LogOut } from "lucide-react";
-import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const NavBar = async () => {
   const session = await auth();
@@ -38,6 +38,7 @@ const NavBar = async () => {
                     src={session?.user?.image || ""}
                     alt={session?.user?.name || ""}
                   />
+                  <AvatarFallback></AvatarFallback>
                 </Avatar>
               </Link>
             </>
